@@ -1,5 +1,5 @@
 function init() {
-    console.log("Starting Kafka Reader");
+    console.log("Starting Kafka Reader Feature Test");
 
     var eventsource;
     var msgsNode = document.getElementById("rc-messages");
@@ -17,21 +17,12 @@ function init() {
     var timerHrNode = document.querySelector(".rc-timer--hr").nextSibling;
     var infoTimeout, errorTimeout;
     
-    function main1() {
-        console.log("In main1");
-
-    }
-
     function main() {
         console.log("In main");
 
     }
 
-    function main2() {
-        console.log("In main2");
-
-    }
-
+    main();
 }
 
 /**
