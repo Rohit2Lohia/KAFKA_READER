@@ -1,0 +1,128 @@
+body {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .rc-box {
+    margin-bottom: 15px;
+  }
+  
+  .rc-box-title {
+    white-space: nowrap;
+  }
+  
+  .rc-box-statline {
+    font-size: small;
+    white-space: nowrap;
+  }
+  
+  .rc-timers {
+    text-align: right;
+    margin-bottom: 2em;
+  }
+  .rc-timer {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+  }
+  .rc-timer + .rc-timer-label:after {
+    display: inline-block;
+    content: "";
+    font-size: small;
+    text-align: center;
+    position: absolute;
+    margin: 50px 0 0 -50px;
+    width: 50px;
+    color: #777;
+  }
+  .rc-timer + .rc-timer-label:before {
+    display: inline-block;
+    content: attr(data-value);
+    font-size: small;
+    text-align: center;
+    position: absolute;
+    margin: 10px 0 0 -50px;
+    line-height: 30px;
+    width: 50px;
+    color: #777;
+  }
+  .rc-timer--sec + .rc-timer-label:after {
+    content: "second";
+  }
+  .rc-timer--min + .rc-timer-label:after {
+    content: "minute";
+  }
+  .rc-timer--hr + .rc-timer-label:after {
+    content: "hour";
+  }
+  .rc-timer-fill {
+    fill-opacity: 0.2;
+  }
+  .rc-timer-looper {
+    fill: transparent;
+    stroke-dasharray: 0 100;
+    stroke-dashoffset: 25;
+    will-change: transform;
+    
+  }
+  .rc-timers--start .rc-timer-looper  {
+    animation: 2s linear 0s infinite looper;
+  }
+  
+  .rc-timer--sec .rc-timer-fill {
+      fill: #00c81c;
+    }
+    .rc-timer--sec .rc-timers--start {
+      stroke: #00c81c;
+      animation-duration: 2s;
+    }
+    .rc-timer--sec .rc-timer-looper {
+      stroke: #00c81c;
+      animation-duration: 2s;
+      fill-opacity: 0.2;
+    }
+
+    .rc-timer--min .rc-timer-fill {
+      fill: #007ec8;
+    }
+    .rc-timer--min .rc-timers--start {
+      stroke: #007ec8;
+      animation-duration: 120s;
+    }
+    .rc-timer--min .rc-timer-looper {
+        stroke: #007ec8;
+        animation-duration: 120s;
+      }
+  
+    .rc-timer--hr .rc-timer-fill {
+      fill: #bb00c8;
+    }
+    .rc-timer--hr .rc-timers--start {
+      stroke: #bb00c8;
+      animation-duration: 7200s;
+    }
+    .rc-timer--hr .rc-timer-looper {
+        stroke: #bb00c8;
+        animation-duration: 7200s;
+      }
+  
+  @keyframes looper {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+    25% {
+      stroke-dasharray: 50 50;
+    }
+    50% {
+      stroke-dasharray: 100 0;
+      stroke-dashoffset: 25;
+    }
+    50.1% {
+      stroke-dasharray: 100 0;
+      stroke-dashoffset: 125;
+    }
+    100% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
